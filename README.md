@@ -1,2 +1,2 @@
-# docs.velte.github.io
+# Velte Documentation
 Velte Documentation Website
