@@ -1,0 +1,1418 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Velte Docs</title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.png">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">INDEX</a></li><li class="chapter-item expanded affix "><a href="versions.html">VERSIONS</a></li><li class="chapter-item expanded affix "><a href="api/reference.html">API REFERENCE</a></li><li class="chapter-item expanded affix "><li class="part-title">GETTING STARTED</li><li class="chapter-item expanded "><a href="start/introduction.html"><strong aria-hidden="true">1.</strong> What is velte?</a></li><li class="chapter-item expanded "><a href="start/get-started.html"><strong aria-hidden="true">2.</strong> Quick Start</a></li><li class="chapter-item expanded affix "><li class="part-title">ESSENTIALS</li><li class="chapter-item expanded "><a href="essentials/application.html"><strong aria-hidden="true">3.</strong> Creating an application</a></li><li class="chapter-item expanded "><a href="essentials/syntax.html"><strong aria-hidden="true">4.</strong> Velte's syntax</a></li><li class="chapter-item expanded "><a href="essentials/reactivity.html"><strong aria-hidden="true">5.</strong> Reactivity</a></li><li class="chapter-item expanded "><a href="essentials/attribute.html"><strong aria-hidden="true">6.</strong> Traits</a></li><li class="chapter-item expanded "><a href="essentials/conditions.html"><strong aria-hidden="true">7.</strong> Conditional Rendering</a></li><li class="chapter-item expanded "><a href="essentials/list.html"><strong aria-hidden="true">8.</strong> List Rendering</a></li><li class="chapter-item expanded "><a href="essentials/events.html"><strong aria-hidden="true">9.</strong> Event handling</a></li><li class="chapter-item expanded "><a href="essentials/input.html"><strong aria-hidden="true">10.</strong> Form input Binding</a></li><li class="chapter-item expanded "><a href="essentials/hooks.html"><strong aria-hidden="true">11.</strong> Lifecycle Hooks</a></li><li class="chapter-item expanded affix "><li class="part-title">COMPONENTS</li><li class="chapter-item expanded "><a href="components/basics.html"><strong aria-hidden="true">12.</strong> Velte components</a></li><li class="chapter-item expanded "><a href="components/traits.html"><strong aria-hidden="true">13.</strong> Component Traits</a></li><li class="chapter-item expanded "><a href="components/events.html"><strong aria-hidden="true">14.</strong> Events</a></li><li class="chapter-item expanded "><a href="components/async.html"><strong aria-hidden="true">15.</strong> Async components</a></li><li class="chapter-item expanded affix "><li class="part-title">MISC</li><li class="chapter-item expanded "><a href="misc/site.html"><strong aria-hidden="true">16.</strong> Site Rendering</a></li><li class="chapter-item expanded "><a href="misc/states.html"><strong aria-hidden="true">17.</strong> State Managment</a></li><li class="chapter-item expanded "><a href="misc/route.html"><strong aria-hidden="true">18.</strong> Routing</a></li><li class="chapter-item expanded "><a href="misc/tools.html"><strong aria-hidden="true">19.</strong> Tooling</a></li><li class="chapter-item expanded affix "><li class="part-title">BEST PRACTICE</li><li class="chapter-item expanded "><a href="best-practice/scale.html"><strong aria-hidden="true">20.</strong> Scaling Up</a></li><li class="chapter-item expanded "><a href="best-practice/deployment.html"><strong aria-hidden="true">21.</strong> Production Deployment</a></li><li class="chapter-item expanded "><a href="best-practice/security.html"><strong aria-hidden="true">22.</strong> Security</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Velte Docs</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p align="center"><img src="./assets/velte-main.png"></p>
+<h1 align="center">Welcome to the velte documentation.
+<p><code>v1.0.4</code></p>
+</h1>
+<div style="break-before: page; page-break-before: always;"></div><p align="center"><img src="./assets/velte-main.png"></p>
+<h1 id="release-information"><a class="header" href="#release-information">Release Information</a></h1>
+<hr />
+<blockquote>
+<p><strong>NOTE</strong> : The curent version of velte is <code>v1.0.4</code>.</p>
+</blockquote>
+<table><thead><tr><th style="text-align: left">Support Stage</th><th style="text-align: left">Support Timing</th><th style="text-align: left">Details</th></tr></thead><tbody>
+<tr><td style="text-align: left">Active</td><td style="text-align: left">3 Months</td><td style="text-align: left">Regularly-scheduled updates and patches</td></tr>
+<tr><td style="text-align: left">Long-Term(LTS)</td><td style="text-align: left">6 Months</td><td style="text-align: left">Critical fixes and security patches</td></tr>
+</tbody></table>
+<h1 id="versions-released"><a class="header" href="#versions-released">Versions Released</a></h1>
+<hr />
+<br>
+<table><thead><tr><th style="text-align: left">Velte Version</th><th style="text-align: left">Support Stage</th><th style="text-align: left">Released</th></tr></thead><tbody>
+<tr><td style="text-align: left"><code>v1.0.4</code></td><td style="text-align: left">Active</td><td style="text-align: left">2022-06-11</td></tr>
+</tbody></table>
+<div style="break-before: page; page-break-before: always;"></div><p align="center"><img src="api/../assets/velte-main.png"></p>
+<h1 id="api-reference"><a class="header" href="#api-reference">API REFERENCE</a></h1>
+<h2 id="global-api"><a class="header" href="#global-api">Global API</a></h2>
+<hr />
+<h3 id="velteelement"><a class="header" href="#velteelement"><code>VelteElement()</code></a></h3>
+<blockquote>
+<p><code>VelteElement(nodeName, traits, ...children)</code> <br> For details, <a href="api/../essentials/application.html#velteelement">see guide here</a></p>
+</blockquote>
+<h3 id="velterender"><a class="header" href="#velterender"><code>VelteRender()</code></a></h3>
+<blockquote>
+<p><code>VelteRender(component, containerNode)</code> <br> For details, <a href="api/../essentials/application.html#mounting-the-app">see guide here</a></p>
+</blockquote>
+<h3 id="veltecomponent--class"><a class="header" href="#veltecomponent--class"><code>VelteComponent : Class</code></a></h3>
+<blockquote>
+<p><code>class VelteComponent{...}</code> <br> Base class all your custom components extended from the <code>velte base class component</code> <br> For details, <a href="api/../components/basics.html#class-components">see guide here</a></p>
+</blockquote>
+<h3 id="velte_version--string"><a class="header" href="#velte_version--string"><code>VELTE_VERSION : String</code></a></h3>
+<blockquote>
+<p><code>String VELTE_VERSION</code> <br> Check current version of velte.</p>
+</blockquote>
+<h2 id="lifecycle-hooks"><a class="header" href="#lifecycle-hooks">Lifecycle Hooks</a></h2>
+<hr />
+<h3 id="veltecreated"><a class="header" href="#veltecreated"><code>VelteCreated()</code></a></h3>
+<blockquote>
+<p>Component created lifecycle hook <br> For details, <a href="api/../essentials/hooks.html#veltecreated">see guide here</a></p>
+</blockquote>
+<h3 id="veltemounted"><a class="header" href="#veltemounted"><code>VelteMounted()</code></a></h3>
+<blockquote>
+<p>Component mounted lifecycle hook <br> For details, <a href="api/../essentials/hooks.html#veltemounted">See guide here</a></p>
+</blockquote>
+<h3 id="velteupdated"><a class="header" href="#velteupdated"><code>VelteUpdated()</code></a></h3>
+<blockquote>
+<p>Component updated lifecycle hook <br> For details, <a href="api/../essentials/hooks.html#velteupdated">See guide here</a></p>
+</blockquote>
+<h3 id="veltedestroyed"><a class="header" href="#veltedestroyed"><code>VelteDestroyed()</code></a></h3>
+<blockquote>
+<p>Component destroyed lifecycle hook <br> For details, <a href="api/../essentials/hooks.html#veltedestroyed">See guide here</a></p>
+</blockquote>
+<h2 id="reactivity"><a class="header" href="#reactivity">Reactivity</a></h2>
+<hr />
+<h3 id="setstate--class-component"><a class="header" href="#setstate--class-component"><code>setState() : Class Component</code></a></h3>
+<blockquote>
+<p><code>this.setState({oldState, newState})</code> <br> For details, <a href="api/../components/basics.html#setstate">see guide here</a> and <a href="api/../essentials/reactivity.html#thissetstate">here</a></p>
+</blockquote>
+<h3 id="reacttostate--class-component"><a class="header" href="#reacttostate--class-component"><code>reactToState() : Class Component</code></a></h3>
+<blockquote>
+<p><code>this.reactToState()</code> <br> For details, <a href="api/../essentials/reactivity.html#thisreacttostate">see guide here</a></p>
+</blockquote>
+<h2 id="misc"><a class="header" href="#misc">Misc</a></h2>
+<hr />
+<h3 id="render--class-component"><a class="header" href="#render--class-component"><code>render() : Class Component</code></a></h3>
+<blockquote>
+<p>Method inherited from the <code>velte base class component</code> <br> For details, <a href="api/../components/basics.html#render--inherited">see guide here</a></p>
+</blockquote>
+<h3 id="veltereturn--class-component"><a class="header" href="#veltereturn--class-component"><code>VelteReturn() : Class Component</code></a></h3>
+<blockquote>
+<p>Method inherited from the <code>velte base class component</code> <br> For details, <a href="api/../essentials/list.html#thisveltereturn">see guide here</a></p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><p align="center"><img src="start/../assets/velte-main.png"></p>
+<h1 id="what-is-velte"><a class="header" href="#what-is-velte">What is Velte?</a></h1>
+<p>Velte is just another small, fast and easy-to-use frontend Javascript library with a declarative and component-based model for developing User Interfaces. velte in no way tries to reinvent the wheel, It takes the wheel and makes it easier to roll with. In summary, It's your typical modern framework or library but friendlier.</p>
+<h2 id="why-use-velte"><a class="header" href="#why-use-velte">Why use Velte?</a></h2>
+<hr />
+<blockquote>
+<p>I have no idea. What started off as a joke with friends ended up with me rewriting the entire library to improve and implement more features.
+<strong>Emmanuel Oni (creator)</strong></p>
+</blockquote>
+<h3 id="beginner-friendly"><a class="header" href="#beginner-friendly"><strong>Beginner friendly</strong><br></a></h3>
+<p>If you're Just starting out as a frontend or fullstack developer, velte can be great practice.</p>
+<h3 id="simple-and-fast"><a class="header" href="#simple-and-fast"><strong>Simple and fast</strong><br></a></h3>
+<p>Weighing in at around 3 KB (minified and compressed), velte helps keep your bundle size small. And rendering is blazing fast, because velte touches only the dynamic parts of your UI when updating — no need to rebuild an entire VDOM tree.</p>
+<h3 id="performant-components"><a class="header" href="#performant-components"><strong>Performant Components</strong><br></a></h3>
+<p>Basically, you can have hundreds of components and still achieve great performance.</p>
+<h3 id="scalable"><a class="header" href="#scalable"><strong>Scalable</strong></a></h3>
+<p>For small to medium sized web applications.</p>
+<h3 id="extensive"><a class="header" href="#extensive"><strong>Extensive</strong><br></a></h3>
+<p>Velte can be used in conjunction with other libraries to increase productivity.</p>
+<h3 id="declarative"><a class="header" href="#declarative"><strong>Declarative</strong><br></a></h3>
+<p>This helps make your code easier to understand and simpler to debug.</p>
+<h3 id="familiar-syntax"><a class="header" href="#familiar-syntax"><strong>Familiar Syntax</strong><br></a></h3>
+<p>Velte's syntax is inspired by <a href="https://reactjs.org/">React</a> and <a href="https://lit.dev/">Lit.js</a></p>
+<h2 id="velte-class-component-example"><a class="header" href="#velte-class-component-example">Velte Class Component Example</a></h2>
+<hr />
+<pre><code class="language-javascript">import {VelteComponent,VelteElement} from &quot;velte&quot;
+
+export class GettingStarted extends VelteComponent{
+    constructor(traits){
+        super(traits)
+        this.state = {}
+    }
+
+    render(){
+        return(
+            &lt;div className=&quot;card&quot;&gt;
+                &lt;h2 className=&quot;title&quot;&gt;&lt;i className=&quot;fas fa-book&quot;&gt;&lt;/i&gt; Getting Started&lt;/h2&gt;
+                &lt;p&gt;You should read the documentation, it covers every bit of the library.&lt;/p&gt;
+                &lt;a href=&quot;./test.html&quot; v-attr:role=&quot;button&quot; className=&quot;button&quot;&gt;Read the Docs&lt;/a&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><p align="center"><img src="start/../assets/velte-main.png"></p>
+<h1 id="quick-start"><a class="header" href="#quick-start">Quick Start</a></h1>
+<p>To get up and running with velte, grab the <a href="start/"><code>velte-starter-kit</code></a>.</p>
+<blockquote>
+<p><strong>NOTE</strong> : You can download the velte docs as a <code>pdf</code>, if you want to work offline.</p>
+</blockquote>
+<h2 id="with-build-tools"><a class="header" href="#with-build-tools">With Build Tools</a></h2>
+<hr />
+<p>A build setup allows us to use compile velte apps during development or for <a href="start/../best-practice/deployment.html">production</a>. The official velte build setup is based on <a href="https://webpack.js.org/">webpack</a>, a frontend build tool that is used to bundle assets and scripts into static assets.</p>
+<h2 id="other-build-tools"><a class="header" href="#other-build-tools">Other Build Tools</a></h2>
+<hr />
+<p>Other build tools can be used to compile velte apps :</p>
+<ul>
+<li><a href="https://vitejs.dev/">Vite</a></li>
+<li><a href="https://rollupjs.org/guide/en">Rollup</a></li>
+<li><a href="https://parceljs.org/">Parcel</a></li>
+<li><a href="https://gulpjs.com/">Gulp</a></li>
+</ul>
+<blockquote>
+<p><strong>NOTE :</strong> These build tool would have to be configured manually to compile velte applications. Support for these tools would be added by default in later versions of <a href="start/"><code>velte-starter-kit</code></a> vite would probably come first.</p>
+</blockquote>
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<hr />
+<h3 id="custom-project"><a class="header" href="#custom-project">Custom Project</a></h3>
+<p>If you already have a project and you want to use velte in that project, run</p>
+<pre><code>npm install velte
+</code></pre>
+<p>This will install velte to your current project.</p>
+<h3 id="starter-kit"><a class="header" href="#starter-kit">Starter Kit</a></h3>
+<p>If you are using the starter-kit, run</p>
+<pre><code>npm install
+</code></pre>
+<p>This will install all required dependencies including velte.</p>
+<pre><code>npm run velte:serve
+</code></pre>
+<p>This would serve the app, used during development.</p>
+<pre><code>npm run velte:build
+</code></pre>
+<p>This would build the app for production in the <code>dist</code> folder.</p>
+<h3 id="velte-cdn"><a class="header" href="#velte-cdn">Velte CDN</a></h3>
+<p>No need to use the starter kit if you don't want to, velte is progressive. If you have an existing website you want to add functionality to or you want to build a small project, you can with the <a href="start/">velte CDN</a>.
+Just include the script tag:</p>
+<pre><code class="language-html">&lt;script src=&quot;http://velte.es.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<h3 id="velte-cli"><a class="header" href="#velte-cli">Velte CLI</a></h3>
+<blockquote>
+<p><strong>NOTE :</strong> This is an upcoming feature, that enables you to generate a custom velte project with options for choosing templating, build tool and more. </p>
+</blockquote>
+<h2 id="requirements"><a class="header" href="#requirements">Requirements</a></h2>
+<hr />
+<p>An average knowledge of these are important when making velte applications.</p>
+<ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>Javascript</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><p align="center"><img src="essentials/../assets/velte-main.png"></p>
+<h1 id="creating-a-velte-application"><a class="header" href="#creating-a-velte-application">Creating a Velte Application</a></h1>
+<p>velte applications are structured with components made with <a href="essentials/../essentials/syntax.html#jsx">JSX</a> and Javascript.</p>
+<pre><code class="language-javascript">//app.js
+const app = &lt;h1&gt;This is JSX&lt;/h1&gt;
+</code></pre>
+<p>JSX is simply HTML in Javascript. To use JSX in velte, you need to import <code>VelteElement</code> from <code>velte</code>.</p>
+<pre><code class="language-javascript">//app.js
+import {VelteElement} from &quot;velte&quot;
+
+const app = &lt;h1&gt;This is JSX&lt;/h1&gt;
+</code></pre>
+<h2 id="velteelement-1"><a class="header" href="#velteelement-1"><code>VelteElement()</code></a></h2>
+<hr />
+<p>When you write JSX it gets converted to <code>VelteElement</code> which returns <code>hyperscript()</code>, then this is added to the VDOM then mounted to the DOM.</p>
+<pre><code class="language-javascript">//JSX
+const app = &lt;h1&gt;This is JSX&lt;/h1&gt;
+//VelteElement
+VelteElement(&quot;h1&quot;, null, &quot;This is JSX&quot;)
+</code></pre>
+<h2 id="mounting-the-app"><a class="header" href="#mounting-the-app">Mounting The App</a></h2>
+<hr />
+<blockquote>
+<p><strong>NOTE</strong> : You should always import <code>VelteRender</code> from <code>velte</code> when creating an app instance.</p>
+</blockquote>
+<p>When you call <code>VelteRender()</code> in a <code>.js</code> file, we are creating an app instance to render to the DOM.</p>
+<pre><code class="language-html">&lt;!--HTML File VelteRender Renders to--&gt;
+&lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
+</code></pre>
+<pre><code class="language-javascript">//document.getElementById(&quot;app&quot;) references the element with an ID &quot;app&quot;
+//so this should be unique
+VelteRender(app, document.getElementById(&quot;app&quot;))
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> : You are not limited to a single app instance per html page, multiple application instances can co-exist.</p>
+</blockquote>
+<h2 id="the-root-component"><a class="header" href="#the-root-component">The Root Component</a></h2>
+<hr />
+<p>What if you have many JSX tags or components to render?</p>
+<pre><code class="language-javascript">//app.js
+//this won't work
+import {VelteElement,VelteRender} from &quot;velte&quot;
+
+const app1 = &lt;h1&gt;This is JSX&lt;/h1&gt;
+const app2 = &lt;h1&gt;This is JSX&lt;/h1&gt;
+
+VelteRender(app1, document.getElementById(&quot;app&quot;))
+VelteRender(app2, document.getElementById(&quot;app&quot;))
+</code></pre>
+<p>The first time you call <code>VelteRender()</code>, we call the <code>reconcile()</code> function on a real DOM node in our case <code>document.getElementById(&quot;app&quot;)</code>. When you call the <code>VelteRender()</code> more than once on the same element, you are calling it with the VDOM node the first <code>VelteRender()</code> returns when called for the first time. So how do we fix this problem? <code>Root Components</code>.<br>
+Every app requires a <strong>Root Components</strong> that can contain other components.</p>
+<pre><code class="language-javascript">//app.js
+//this will work
+import {VelteElement,VelteRender} from &quot;velte&quot;
+
+const app1 = (
+    &lt;div&gt;
+        &lt;h1&gt;This is JSX&lt;/h1&gt; 
+        &lt;h1&gt;This is also JSX&lt;/h1&gt;
+    &lt;/div&gt;
+)
+
+VelteRender(app1, document.getElementById(&quot;app&quot;))
+
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> : We wrapped the two <code>&lt;h1&gt;</code> tags in a <code>&lt;div&gt;</code> because, when adding multiple tags to JSX snippet it needs to be grouped.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><p align="center"><img src="essentials/../assets/velte-main.png"></p>
+<h1 id="veltes-syntax"><a class="header" href="#veltes-syntax">Velte's syntax</a></h1>
+<p>Velte uses an HTML-based template syntax <a href="https://www.typescriptlang.org/docs/handbook/jsx.html">JSX</a> that allows you to declaratively bind the rendered DOM to the underlying component instance's data. All velte templates are syntactically valid HTML that can be parsed by spec-compliant browsers and HTML parsers.</p>
+<p>Under the hood, velte compiles the templates into highly-optimized JavaScript code. Combined with the reactivity system, velte intelligently figures out the minimal number of components to re-render and apply the minimal amount of DOM manipulations when the app state changes.</p>
+<h2 id="jsx"><a class="header" href="#jsx">JSX</a></h2>
+<hr />
+<p>JSX is an open standard and it is not restricted to React in any way so we can use it velte without React and it is fairly easy to understand. JSX is simply HTML in Javascript but with superpowers.</p>
+<h2 id="text-interpolation"><a class="header" href="#text-interpolation">Text Interpolation</a></h2>
+<hr />
+<p>The most basic form of data binding is text interpolation using the &quot;Mustache&quot; syntax.</p>
+<pre><code class="language-html">&lt;span&gt;counter : {count}&lt;/span&gt;
+</code></pre>
+<p>The mustache tag gets replaced by the value of <code>count</code> property from the corresponding component instance. It will also be updated whenever the <code>count</code> property changes.</p>
+<pre><code class="language-html">&lt;p&gt;Message : {text}&lt;/p&gt;
+</code></pre>
+<p><code>text</code> can also be a trait passed into the corresponding component instance.</p>
+<p>Mustaches can also be used inside HTML attributes. They can refer to variables or functions.</p>
+<pre><code class="language-html">&lt;!--variable--&gt;
+&lt;h1 className = {logo}&gt;LOGO&lt;/h1&gt;
+&lt;!--function--&gt;
+&lt;h1 className = {returnLogo()}&gt;LOGO&lt;/h1&gt;
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> : single tag elements in velte and JSX must end with <code>/</code>. Like
+<code>&lt;img/&gt;</code>, <code>&lt;br/&gt;</code>, <code>&lt;hr/&gt;</code></p>
+</blockquote>
+<h2 id="using-javascript-expressions"><a class="header" href="#using-javascript-expressions">Using JavaScript Expressions</a></h2>
+<hr />
+<p>velte supports the full power of JavaScript expressions inside Mustaches:</p>
+<pre><code class="language-javascript">{number + 20}
+{answer : &quot;YES&quot; ? &quot;NO&quot;}
+{text.reverse()}
+{increment()}
+{()=&gt;console.log(&quot;IIFEs&quot;)()}
+</code></pre>
+<p>These expressions will be evaluated as JavaScript in the data scope of the current component instance.</p>
+<h2 id="expressions-only"><a class="header" href="#expressions-only">Expressions Only</a></h2>
+<hr />
+<p>JSX only supports Javascript expressions and not statements or definitions.</p>
+<pre><code class="language-javascript">//This won't work
+{let bar = &quot;foo&quot;}
+{if (a) {return a}}
+</code></pre>
+<h2 id="directives"><a class="header" href="#directives">Directives</a></h2>
+<hr />
+<p>Directives are special traits some with the <code>v-</code> prefix. <code>v</code> for <code>velte</code>.
+These directives are used to pass in <code>trait attributes</code> on an element.<br></p>
+<ul>
+<li><code>v-attr for data trait</code><br></li>
+<li><code>v-on for event trait</code></li>
+</ul>
+<pre><code class="language-html">&lt;h1 v-attr:role=&quot;button&quot; v-on:click={doSomething()}&gt;&lt;/h1&gt;
+</code></pre>
+<h2 id="classes-and-styles"><a class="header" href="#classes-and-styles">Classes and Styles</a></h2>
+<hr />
+<h3 id="classes"><a class="header" href="#classes">Classes</a></h3>
+<p>You can add class names directly to your HTML elements.</p>
+<pre><code class="language-html">&lt;p className = &quot;myStyleName&quot;&gt;&lt;/p&gt;
+</code></pre>
+<h3 id="styles"><a class="header" href="#styles">Styles</a></h3>
+<p>You can also add inline styles directly to your HTML elements.</p>
+<pre><code class="language-html">&lt;p style = {{color:&quot;red&quot;}}&gt;&lt;/p&gt;
+&lt;img src=&quot;./image.png&quot; width={800} height={180}/&gt;
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><p align="center"><img src="essentials/../assets/velte-main.png"></p>
+<h1 id="reactivity-1"><a class="header" href="#reactivity-1">Reactivity</a></h1>
+<blockquote>
+<p><strong>NOTE</strong> : velte's reactivity comes from <code>Velte.__updater()</code> in <code>@velte/dom</code> which takes in the <code>oldVnode</code> and <code>newVnode</code>  to render after <a href="essentials/">diffing</a> this makes velte intelligently choose what parts of your components needs to be re-rendered, which out re-rendering everything.</p>
+</blockquote>
+<h2 id="declaring-reactive-state"><a class="header" href="#declaring-reactive-state">Declaring Reactive State</a></h2>
+<hr />
+<blockquote>
+<p><strong>NOTE</strong> : Before going through this, you should understand how velte class components works. </p>
+</blockquote>
+<h3 id="thissetstate"><a class="header" href="#thissetstate"><code>this.setState()</code></a></h3>
+<p>The responsibility of how to update the DOM whenever you call <code>this.setState()</code> lies in <code>@velte/dom</code> rather than <code>@velte/core</code>. When <code>this.setState()</code> is called, velte calls <code>Velte.__updater()</code> under the hood.</p>
+<pre><code class="language-javascript">this.setState({count: this.state.count + 1})
+</code></pre>
+<p>The value of <code>count</code> is updated and re-rendered where called.</p>
+<pre><code class="language-javascript">render(){
+    return &lt;p&gt;{this.state.count}&lt;/p&gt;
+}
+</code></pre>
+<h3 id="thisreacttostate"><a class="header" href="#thisreacttostate"><code>this.reactToState()</code></a></h3>
+<p>What if you want to reactively re-render a property's change not in <code>this.state</code>?
+call <code>this.reactToState()</code> on property change.</p>
+<blockquote>
+<p><strong>NOTE</strong> : A good example of this is when you want to react to state change on the global store.</p>
+</blockquote>
+<pre><code class="language-javascript">//global stores are more complicated than this
+const globalStore = 1
+
+...
+render(){
+    const onChange = ()=&gt; {
+        globalStore = globalStore + 1
+        this.reactToState() //this would call Velte.__updater() to re-render change
+    }
+    return (
+        &lt;p&gt;{globalStore}&lt;/p&gt;
+        &lt;button v-on:click={this.onChange}&gt;change&lt;/button&gt;
+        )
+}
+
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> : Basic functions can live inside the <code>render()</code> method</p>
+</blockquote>
+<blockquote>
+<p><strong>NOTE</strong> : <code>this</code> is called before accessing the different methods because we use <code>this</code> to reference the current component instance.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><p align="center"><img src="essentials/../assets/velte-main.png"></p>
+<h1 id="traits"><a class="header" href="#traits">Traits</a></h1>
+<p>A common need for setting traits is manipulating an element's class list, its inline styles and data attributes.</p>
+<blockquote>
+<p><strong>NOTE</strong> : Traits are just like <strong>attributes</strong> that get passed into elements and components.</p>
+</blockquote>
+<h2 id="class-trait"><a class="header" href="#class-trait">Class Trait</a></h2>
+<hr />
+<p>These are simply <code>css</code> classes defined for elements like <code>&lt;p&gt;</code>, <code>&lt;div&gt;</code>, <code>&lt;img&gt;</code>.</p>
+<pre><code class="language-html">&lt;p className = &quot;classTrait&quot;&gt;&lt;/p&gt;
+</code></pre>
+<p>When using these classes, it is common to import them from <code>css</code> files.</p>
+<pre><code class="language-css">/*style.css*/
+.classTraits{
+    color: red;
+}
+</code></pre>
+<pre><code class="language-javascript">import &quot;./style/style.css&quot;
+const App = &lt;p className = &quot;classTrait&quot;&gt;&lt;/p&gt;
+</code></pre>
+<p>The class names can also be stored in variables.</p>
+<pre><code class="language-javascript">import &quot;./style/style.css&quot;
+
+const myVariable = &quot;classTraits&quot;
+const App = &lt;p className = {myVariable}&gt;&lt;/p&gt;
+</code></pre>
+<h2 id="style-trait"><a class="header" href="#style-trait">Style Trait</a></h2>
+<hr />
+<p>These are inline <code>css</code> styles defined for elements like <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>, <code>&lt;input&gt;</code>.</p>
+<pre><code class="language-javascript">const App = &lt;p style = {{color:&quot;red&quot;}}&gt;&lt;/p&gt;
+</code></pre>
+<p>The styles can also be stored in variables as objects.</p>
+<pre><code class="language-javascript">import &quot;./style/style.css&quot;
+
+const myStyleVariable = {color: &quot;red&quot;}
+const App = &lt;p style = {myStyleVariable}&gt;&lt;/p&gt;
+</code></pre>
+<h2 id="attribute-trait"><a class="header" href="#attribute-trait">Attribute Trait</a></h2>
+<hr />
+<p>These are traits that are not default <code>HTML</code> attributes like <code>href</code> or <code>src</code>. For example, when using a 3rd party library for styling HTML elements, It can have custom attributes for styling them.</p>
+<pre><code class="language-javascript">//role would be passed in a data trait
+const App = &lt;a href=&quot;http://lit.dev&quot; role = &quot;button&quot;&gt;Go to Lit's Website&lt;/a&gt;
+</code></pre>
+<p><code>role</code> is a custom attribute, but by default velte will read this as a <a href="essentials/../essentials/attribute.html#data-trait"><code>component trait</code></a>. To fix this you need to tell velte it's an attribute trait.</p>
+<pre><code class="language-javascript">//role would be passed in an attribute trait
+const App = &lt;a href=&quot;http://lit.dev&quot; v-attr:role = &quot;button&quot;&gt;Go to Lit's Website&lt;/a&gt;
+</code></pre>
+<p><code>v-attr:</code> directive stands for <code>velte-attribute</code>, this would tell velte it's an attribute trait.</p>
+<h2 id="event-trait"><a class="header" href="#event-trait">Event Trait</a></h2>
+<hr />
+<p>These traits are event handlers, when a user performs an action like <code>clicking on buttons</code>, <code>double clicking on buttons</code>, <code>hovers on images</code> and even <code>submitting a form</code>, these traits are used to perform actions based on what the user's actions.<br>
+To register an event trait on an element use the <code>v-on</code> directive which stands for <code>velte-on</code></p>
+<pre><code class="language-javascript">const App = &lt;button v-on:click={()=&gt;console.log(&quot;You clicked me&quot;)}&gt;Click me&lt;/button&gt;
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> : Use the Mustache syntax to pass in a callback function to perform an action: <code>{()=&gt;actionFunction()}</code>, these can be methods in a <a href="essentials/../components/basics.html#class-components"><code>class component</code></a> or plain <code>Javascript</code> functions</p>
+</blockquote>
+<pre><code class="language-javascript">//using plain Javascript functions
+function sayHi(){
+    console.log(&quot;Hi&quot;)
+}
+
+const App = &lt;button v-on:click={()=&gt;sayHi()}&gt;Click me&lt;/button&gt;
+</code></pre>
+<h2 id="data-trait"><a class="header" href="#data-trait">Data Trait</a></h2>
+<hr />
+<p>These traits are commonly used to pass in a data into a component, it's what they where build for. They are not <code>attributes</code> or <code>directives</code>, just plain definitions. Data traits are commonly refered to as <code>traits</code> because they define properties of components or common elements.</p>
+<pre><code class="language-javascript">//passing data traits into component
+
+const App = &lt;CustomComponent myTrait=&quot;Hello World&quot;/&gt;
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> : The code snippet above passes <code>&quot;Hello World&quot;</code> into the <code>CustomComponent</code> component.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><p align="center"><img src="essentials/../assets/velte-main.png"></p>
+<h1 id="conditional-rendering"><a class="header" href="#conditional-rendering">Conditional Rendering</a></h1>
+<p>This is literally what it sounds like, <strong>&quot;I would only render something when a condition is true, if not i'll render something else&quot;</strong>. This makes our web apps more dynamic.<br></p>
+<p>Example: rendering the dashboard when someone is logged in or a session is started, if a session is <strong>NOT</strong> started render the home page.</p>
+<h2 id="the-ifif-tag"><a class="header" href="#the-ifif-tag">The <code>&lt;If&gt;...&lt;/If&gt;</code> tag</a></h2>
+<hr />
+<p>This tag is used to render or perform actions when a certain condition is met. It's like your regular <code>If statement</code> but with tags.</p>
+<pre><code class="language-javascript">//JSX for velte syntax
+
+const App = (
+&lt;If condition = {&quot;insert condition here&quot;}&gt;
+    //perform action here
+&lt;/If&gt;)
+</code></pre>
+<pre><code class="language-javascript">//Javascript
+
+if(&quot;insert condition here&quot;){
+    //perform action here
+}
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> : The <code>condition</code> trait is used to pass JavaScript expressions inside Mustaches to the <code>&lt;If&gt;</code> tag for use.</p>
+</blockquote>
+<p>Full example:</p>
+<pre><code class="language-javascript">//This renders the &quot;Dashboard&quot; component if login is true
+const login = true
+
+const App = (
+&lt;If condition = {login}&gt;
+    &lt;Dashboard/&gt;
+&lt;/If&gt;)
+</code></pre>
+<p>Javascript expressions are welcome.</p>
+<pre><code class="language-javascript">//This also renders the &quot;Dashboard&quot; component if login is true
+const login = true
+
+const App = (
+&lt;If condition = {login == true}&gt;
+    &lt;Dashboard/&gt;
+&lt;/If&gt;)
+</code></pre>
+<h2 id="the-whenwhen-tag"><a class="header" href="#the-whenwhen-tag">The <code>&lt;When&gt;...&lt;/When&gt;</code> tag</a></h2>
+<hr />
+<p>This tag functions exactly like the <code>&lt;If/&gt;</code> tag. It is used along with the <code>&lt;Otherwise&gt;</code> tag for conditional rendering.</p>
+<pre><code class="language-javascript">//The &lt;When&gt; tag functions like the &lt;If&gt; tag
+const number = 0
+
+const App = (
+&lt;When condition = {number == 0}&gt;
+    {number = number + 1}
+&lt;/When&gt;)
+</code></pre>
+<h2 id="the-otherwiseotherwise-tag"><a class="header" href="#the-otherwiseotherwise-tag">The <code>&lt;Otherwise&gt;...&lt;/Otherwise&gt;</code> tag</a></h2>
+<hr />
+<p>This tag functions exactly like an <code>else statement</code>. It is used along with the <code>&lt;When&gt;</code> tag for conditional rendering.</p>
+<pre><code class="language-javascript">//The &lt;Otherwise&gt; tag will execute it's body.
+const number = 1
+
+const App = (
+&lt;Choose&gt;
+    &lt;When condition = {number == 0}&gt;
+        {number = number + 1}
+    &lt;/When&gt;
+    &lt;Otherwise&gt;
+        {()=&gt;console.log(&quot;number is not 0&quot;)}
+    &lt;/Otherwise&gt;
+&lt;/Choose&gt;
+)
+</code></pre>
+<h2 id="the-choosechoose-tag"><a class="header" href="#the-choosechoose-tag">The <code>&lt;Choose&gt;...&lt;/Choose&gt;</code> tag</a></h2>
+<hr />
+<p>This tag is used to house the <code>&lt;When&gt;</code> and <code>&lt;Otherwise&gt;</code> tag.</p>
+<pre><code class="language-javascript">//The &lt;Choose&gt; tag houses &lt;When&gt; and &lt;Otherwise&gt;
+const login = true
+
+const loginDashboard = ()=&gt;{
+    return &lt;Dashboard/&gt;
+}
+
+const promptLogin = ()=&gt;{
+    return &lt;Homepagelogin/&gt;
+}
+
+const App = (
+&lt;Choose&gt;
+    &lt;When condition = {login}&gt;
+        {()=&gt;loginDashboard()}
+    &lt;/When&gt;
+    &lt;Otherwise&gt;
+        {()=&gt;promptLogin()}
+    &lt;/Otherwise&gt;
+&lt;/Choose&gt;
+)
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> : You can have multiple <code>&lt;When&gt;</code> tags and <strong>only ONE</strong> <code>&lt;Otherwise&gt;</code> in one main <code>&lt;Choose&gt;</code> this would simulate a <code>if...else if...else</code> condition or a <code>switch statement</code></p>
+</blockquote>
+<pre><code class="language-javascript">//Multiple cases in velte JSX syntax
+const message = &quot;Hello World&quot;
+
+const App = (
+&lt;Choose&gt;
+    &lt;When condition = {message == &quot;Hi&quot;}&gt;
+        {()=&gt;console.log(`${message}`)}
+    &lt;/When&gt;
+    &lt;When condition = {message == &quot;Hello World&quot;}&gt;
+        {()=&gt;console.log(`${message}`)}
+    &lt;/When&gt;
+    &lt;Otherwise&gt;
+        {()=&gt;console.log(`${message}`)}
+    &lt;/Otherwise&gt;
+&lt;/Choose&gt;
+)
+</code></pre>
+<pre><code class="language-javascript">//Multiple cases in Javascript
+const message = &quot;Hello World&quot;
+
+if(message == &quot;Hi&quot;){
+    console.log(`${message}`)
+}else if (message == &quot;Hello World&quot;){
+    console.log(`${message}`)
+}else{
+    console.log(`${message}`)
+}
+</code></pre>
+<p>On an unrelated note :</p>
+<h2 id="the-withwith-tag"><a class="header" href="#the-withwith-tag">The <code>&lt;with&gt;...&lt;/With&gt;</code> Tag</a></h2>
+<hr />
+<p>This tag is used to assign local variables :</p>
+<pre><code class="language-html">&lt;With foo={ 47 } bar={ &quot;test&quot; }&gt;
+  &lt;span&gt;{ foo }&lt;/span&gt;
+  &lt;span&gt;{ bar }&lt;/span&gt;
+&lt;/With&gt;
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><p align="center"><img src="essentials/../assets/velte-main.png"></p>
+<h1 id="list-rendering"><a class="header" href="#list-rendering">List Rendering</a></h1>
+<p>This is simply looping through an array of items for rendering or performing functions.</p>
+<h2 id="the-forfor-tag"><a class="header" href="#the-forfor-tag">The <code>&lt;For&gt;...&lt;/For&gt;</code> tag</a></h2>
+<hr />
+<p>This tag performs the action of the <code>for loop</code> and <code>while loop</code>, it is used for looping over arrays to get indexes, render array elements, perform actions based on the array element or what you want to do with the array elements.</p>
+<pre><code class="language-javascript">//&lt;For&gt; performs the action of the for loop and while loop
+
+const names = [&quot;Mike&quot;, &quot;John&quot;, &quot;Eliot&quot;]
+
+const App = (
+    &lt;For each=&quot;name&quot; of={names}&gt;
+        {()=&gt;console.log(name)}
+    &lt;/For&gt;
+)
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> : The <code>each</code> trait is a reference to the current item of the array which can be used within the body as variable. The <code>of</code> trait is used to define the array to iterate over. This can also be a collection (Immutable.js) or anything on which a function with the name map can be called.</p>
+</blockquote>
+<pre><code class="language-javascript">//Output same as before
+
+const App = (
+    &lt;For each=&quot;name&quot; of={[&quot;Mike&quot;, &quot;John&quot;, &quot;Eliot&quot;]}&gt;
+        {()=&gt;console.log(name)}
+    &lt;/For&gt;
+)
+</code></pre>
+<h3 id="rendering-to-dom"><a class="header" href="#rendering-to-dom">Rendering to DOM</a></h3>
+<p>The <code>&lt;For&gt;</code> tag can also return valid JSX for rendering to the browser.</p>
+<pre><code class="language-javascript">const App = (
+    &lt;For each=&quot;name&quot; of={[&quot;Mike&quot;, &quot;John&quot;, &quot;Eliot&quot;]}&gt;
+        &lt;h1 key={name}&gt;{name}&lt;/h1&gt;
+    &lt;/For&gt;
+)
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> : The <code>key</code> trait is used to pass in a unique id that uniquely identifies the element.</p>
+</blockquote>
+<pre><code class="language-javascript">//alternative usage for the &lt;For&gt; tag
+
+const item = [
+    {&quot;id&quot;:1,&quot;title&quot;:&quot;Game of thrones&quot;}
+    {&quot;id&quot;:2,&quot;title&quot;:&quot;Flight (2012)&quot;}
+]
+
+const App = (
+    &lt;For
+        of={items}
+        body={(item, index) =&gt; (
+            &lt;span key={item.id}&gt;
+            {index}. {item.title}
+            &lt;/span&gt;
+        )}
+    /&gt;
+)
+</code></pre>
+<h2 id="thisveltereturn"><a class="header" href="#thisveltereturn"><code>this.VelteReturn()</code></a></h2>
+<hr />
+<p><code>VelteReturn()</code> can be used to <code>return</code> out of loops in components.</p>
+<pre><code class="language-javascript">
+//inside class component
+render(){
+    return(
+        &lt;div&gt;
+            &lt;For each=&quot;name&quot; of={[&quot;Mike&quot;, &quot;John&quot;, &quot;Eliot&quot;]}&gt;
+                {()=&gt;console.log(name)}
+                &lt;If condition={name == &quot;John&quot;}&gt;
+                    {()=&gt;this.VeltReturn()}
+                &lt;/If&gt;
+            &lt;/For&gt;
+        &lt;/div&gt;
+    )
+}
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> : calling return directly inside a <code>&lt;For&gt;</code> tag doesn't work and returns <code>undefined</code> if returning JSX.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><p align="center"><img src="essentials/../assets/velte-main.png"></p>
+<h1 id="event-handling"><a class="header" href="#event-handling">Event handling</a></h1>
+<p>when a user performs an action like <code>clicking on buttons</code>, <code>double clicking on buttons</code>, <code>hovers on images</code> and even <code>submitting a form</code>, our application can react to those actions known as <code>events</code>.<br></p>
+<p>To get started with event handling in velte we use <a href="essentials/./attribute.html#event-trait"><code>event traits</code></a></p>
+<p>All event traits in velte start with the <code>v-on</code> directive which stands for <code>velte-on</code>.</p>
+<blockquote>
+<p><strong>NOTE</strong> : You cannot use <code>velte-on</code> as a replacment for <code>v-on</code></p>
+</blockquote>
+<h2 id="mouse-events"><a class="header" href="#mouse-events">Mouse Events</a></h2>
+<hr />
+<h3 id="v-onclick"><a class="header" href="#v-onclick"><code>v-on:click</code></a></h3>
+<h3 id="v-ondoubleclick"><a class="header" href="#v-ondoubleclick"><code>v-on:doubleClick</code></a></h3>
+<h3 id="v-oncontextmenu"><a class="header" href="#v-oncontextmenu"><code>v-on:contextMenu</code></a></h3>
+<h3 id="v-onmousedown"><a class="header" href="#v-onmousedown"><code>v-on:mouseDown</code></a></h3>
+<h3 id="v-onmouseenter"><a class="header" href="#v-onmouseenter"><code>v-on:mouseEnter</code></a></h3>
+<h3 id="v-onmouseleave"><a class="header" href="#v-onmouseleave"><code>v-on:mouseLeave</code></a></h3>
+<h3 id="v-onmousemove"><a class="header" href="#v-onmousemove"><code>v-on:mouseMove</code></a></h3>
+<h3 id="v-onmouseout"><a class="header" href="#v-onmouseout"><code>v-on:mouseOut</code></a></h3>
+<h3 id="v-onmouseover"><a class="header" href="#v-onmouseover"><code>v-on:mouseOver</code></a></h3>
+<h3 id="v-onmouseup"><a class="header" href="#v-onmouseup"><code>v-on:mouseUp</code></a></h3>
+<h3 id="v-ondrag"><a class="header" href="#v-ondrag"><code>v-on:drag</code></a></h3>
+<h3 id="v-ondragend"><a class="header" href="#v-ondragend"><code>v-on:dragEnd</code></a></h3>
+<h3 id="v-ondragenter"><a class="header" href="#v-ondragenter"><code>v-on:dragEnter</code></a></h3>
+<h3 id="v-ondragexit"><a class="header" href="#v-ondragexit"><code>v-on:dragExit</code></a></h3>
+<h3 id="v-ondragleave"><a class="header" href="#v-ondragleave"><code>v-on:dragLeave</code></a></h3>
+<h3 id="v-ondragover"><a class="header" href="#v-ondragover"><code>v-on:dragOver</code></a></h3>
+<h3 id="v-ondragstart"><a class="header" href="#v-ondragstart"><code>v-on:dragStart</code></a></h3>
+<h3 id="v-ondrop"><a class="header" href="#v-ondrop"><code>v-on:drop</code></a></h3>
+<h2 id="keyboard-events"><a class="header" href="#keyboard-events">Keyboard Events</a></h2>
+<hr />
+<h3 id="v-onkeydown"><a class="header" href="#v-onkeydown"><code>v-on:keyDown</code></a></h3>
+<h3 id="v-onkeypress"><a class="header" href="#v-onkeypress"><code>v-on:keyPress</code></a></h3>
+<h3 id="v-onkeyup"><a class="header" href="#v-onkeyup"><code>v-on:keyUp</code></a></h3>
+<h2 id="clipboard-events"><a class="header" href="#clipboard-events">Clipboard Events</a></h2>
+<hr />
+<h3 id="v-oncut"><a class="header" href="#v-oncut"><code>v-on:cut</code></a></h3>
+<h3 id="v-oncopy"><a class="header" href="#v-oncopy"><code>v-on:copy</code></a></h3>
+<h3 id="v-onpaste"><a class="header" href="#v-onpaste"><code>v-on:paste</code></a></h3>
+<h2 id="form-events"><a class="header" href="#form-events">Form Events</a></h2>
+<hr />
+<h3 id="v-oninput"><a class="header" href="#v-oninput"><code>v-on:input</code></a></h3>
+<h3 id="v-onsubmit"><a class="header" href="#v-onsubmit"><code>v-on:submit</code></a></h3>
+<h3 id="v-onchange"><a class="header" href="#v-onchange"><code>v-on:change</code></a></h3>
+<h2 id="focus-events"><a class="header" href="#focus-events">Focus Events</a></h2>
+<hr />
+<h3 id="v-onfocus"><a class="header" href="#v-onfocus"><code>v-on:focus</code></a></h3>
+<h3 id="v-onblur"><a class="header" href="#v-onblur"><code>v-on:blur</code></a></h3>
+<h2 id="ui-wheel-events"><a class="header" href="#ui-wheel-events">UI Wheel Events</a></h2>
+<hr />
+<h3 id="v-onscroll"><a class="header" href="#v-onscroll"><code>v-on:scroll</code></a></h3>
+<h3 id="v-onwheel"><a class="header" href="#v-onwheel"><code>v-on:wheel</code></a></h3>
+<h2 id="selection-events"><a class="header" href="#selection-events">Selection Events</a></h2>
+<hr />
+<h3 id="v-onselect"><a class="header" href="#v-onselect"><code>v-on:select</code></a></h3>
+<h2 id="touch-events"><a class="header" href="#touch-events">Touch Events</a></h2>
+<hr />
+<h3 id="v-ontouchcancel"><a class="header" href="#v-ontouchcancel"><code>v-on:touchCancel</code></a></h3>
+<h3 id="v-ontouchend"><a class="header" href="#v-ontouchend"><code>v-on:touchEnd</code></a></h3>
+<h3 id="v-ontouchmove"><a class="header" href="#v-ontouchmove"><code>v-on:touchMove</code></a></h3>
+<h3 id="v-ontouchstart"><a class="header" href="#v-ontouchstart"><code>v-on:touchStart</code></a></h3>
+<div style="break-before: page; page-break-before: always;"></div><p align="center"><img src="essentials/../assets/velte-main.png"></p>
+<h1 id="form-input-binding"><a class="header" href="#form-input-binding">Form input Binding</a></h1>
+<p>You can bind form input <a href="essentials/./attribute.html#traits">traits</a> like <code>value</code> to variables. When this is done, the value of the variable would be assigned to form input trait.</p>
+<h2 id="one---way-data-binding"><a class="header" href="#one---way-data-binding">One - way data binding</a></h2>
+<hr />
+<p>This is binding the value of a variable to the value of the form input. If the varaible changes the value of the form input changes too. But if the form input value changes first, the variable value will <strong>NOT</strong> change. So the relationship here is <code>one-way data binding</code></p>
+<p align="center"><img src="essentials/../assets/one-way.png"></p>
+<h2 id="how-to-implement-this-in-velte"><a class="header" href="#how-to-implement-this-in-velte">How to implement this in velte?</a></h2>
+<pre><code class="language-javascript">//one-way data binding in velte
+
+const variableValue = &quot;Velte is ok-ish, right?&quot;
+const App = (&lt;input name=&quot;message&quot; value = {variableValue}/&gt;)
+</code></pre>
+<h2 id="two---way-data-binding"><a class="header" href="#two---way-data-binding">Two - way data binding</a></h2>
+<hr />
+<p>This is binding the value of a variable to the value of the form input and vice-versa. If the variable value changes the form input value also changes and if the value of the form input changes, the variable value changes too. So the relationship here is <code>two-way data binding</code></p>
+<blockquote>
+<p><strong>NOTE</strong> : In velte, two-way data binding is acomplished using the         <a href="essentials/./events.html"><code>v-on:change</code></a> event trait.</p>
+</blockquote>
+<p align="center"><img src="essentials/../assets/two-way.png"></p>
+<pre><code class="language-javascript">//two-way data binding in velte
+
+const variableValue = &quot;Velte is awesome&quot;
+
+function handleChange(e){
+    e.preventDefault()
+    variableValue = e.target.value
+}
+
+const App = (
+    &lt;div&gt;
+        &lt;p&gt;{variableValue}&lt;/p&gt;
+        &lt;input name=&quot;message&quot; value = {variableValue} v-on:change={()=&gt;handleChange()}/&gt;
+    &lt;/div&gt;
+)
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><p align="center"><img src="essentials/../assets/velte-main.png"></p>
+<h1 id="lifecycle-hooks-1"><a class="header" href="#lifecycle-hooks-1">Lifecycle Hooks</a></h1>
+<blockquote>
+<p><strong>NOTE</strong> : To use lifecycle hook in velte, it has to be inside a class component and <strong>NOT</strong> a function component, These hooks are inherited from <code>VelteComponent: class</code>.</p>
+</blockquote>
+<p>Every velte component instance goes through a series of initialization steps when it's created, mounted, updated and destroyed. Thus creating a lifecycle for every component. This gives you the ability to input code at any stage of the lifecycle to make components dynamic. For example, performing API calls in the <code>VelteCreated()</code> hook before the component is mounted.</p>
+<h2 id="veltecreated-1"><a class="header" href="#veltecreated-1"><code>VelteCreated()</code></a></h2>
+<hr />
+<p>This hook is called after the component instance has set up reactive data and methods before the component is mounted.</p>
+<pre><code class="language-javascript">//Inside a class component
+
+VelteCreated(){
+    console.log(&quot;Component Created&quot;)
+}
+</code></pre>
+<h2 id="veltemounted-1"><a class="header" href="#veltemounted-1"><code>VelteMounted()</code></a></h2>
+<hr />
+<p>This hook is called after all child components (if any) have been mounted and it's DOM tree has been created and inserted into the <a href="essentials/../essentials/application.html#the-root-component">root component</a> (if any).</p>
+<pre><code class="language-javascript">//Inside a class component
+
+VelteMounted(){
+    console.log(&quot;Component Mounted&quot;)
+}
+</code></pre>
+<h2 id="velteupdated-1"><a class="header" href="#velteupdated-1"><code>VelteUpdated()</code></a></h2>
+<hr />
+<p>This hook is called after there is an update to it's DOM tree due to <a href="essentials/../essentials/reactivity.html#reactivity">reactive</a> state change.</p>
+<pre><code class="language-javascript">//Inside a class component
+
+VelteUpdated(){
+    console.log(&quot;Component Updated&quot;)
+}
+</code></pre>
+<blockquote>
+<p><strong>WARNING</strong> : Do not mutate component states in the <code>VelteUpdated()</code> hook, this will likely lead to an infinte update loop.</p>
+</blockquote>
+<h2 id="veltedestroyed-1"><a class="header" href="#veltedestroyed-1"><code>VelteDestroyed()</code></a></h2>
+<hr />
+<p>This hook is called after all it's child components (if any) have been destroyed and it's reactive effects have been stopped.</p>
+<pre><code class="language-javascript">//Inside a class component
+
+VelteDestroyed(){
+    console.log(&quot;Component Destroyed&quot;)
+}
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> : More lifecycle hooks would be implemented in later versions of velte.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><p align="center"><img src="components/../assets/velte-main.png"></p>
+<h1 id="velte-components"><a class="header" href="#velte-components">Velte components</a></h1>
+<blockquote>
+<p><strong>NOTE</strong> : You should always import <code>VelteElement</code> and <code>VelteComponent</code> from <code>velte</code> when using velte components</p>
+</blockquote>
+<p>Comonents allows us to split the UI into independent and reusable pieces. It's common for an app to be organised into a tree of nested components.<br>
+Velte supports <a href="components/./basics.html#functional-components"><code>function components</code></a> and <a href="components/./basics.html#class-components"><code>class components</code></a></p>
+<p align="center"><img src="components/../assets/component-tree2.png"></p>
+<blockquote>
+<p><strong>NOTE</strong> : In velte, very component is made up of custom content and functionality.</p>
+</blockquote>
+<p align="center"><img src="components/../assets/component.png" width=200></p>
+<p>From the diagram above, every velte component is made up of <code>states</code>, <code>hooks</code>, <code>methods</code>, and <code>templates</code></p>
+<h2 id="calling-components"><a class="header" href="#calling-components">Calling Components</a></h2>
+<hr />
+<p>Calling components is just like calling a HTML element like <code>&lt;img&gt;</code></p>
+<pre><code class="language-javascript">const App = &lt;MyComponent/&gt;
+</code></pre>
+<p><code>MyComponent</code> is the name of the component.</p>
+<h2 id="functional-components"><a class="header" href="#functional-components">Functional Components</a></h2>
+<hr />
+<p align="center"><img src="components/../assets/velte-function-component.png"></p>
+<p>These components are created with <code>functions</code>. </p>
+<pre><code class="language-javascript">function functionComponent({name}){
+    return (
+        &lt;div&gt;
+            &lt;h1&gt;I can render stuff too...&lt;/h1&gt;
+            &lt;p&gt;Hello there, {name}&lt;/p&gt;
+            &lt;AnotherComponent/&gt;
+        &lt;/div&gt;
+    )
+}
+</code></pre>
+<pre><code class="language-javascript">const anotherFunctionComponent = ({age})=&gt;{
+    return (
+        &lt;div&gt;
+            &lt;h1&gt;I can also render stuff too...&lt;/h1&gt;
+            &lt;p&gt;Your age is {age}&lt;/p&gt;
+            &lt;functionComponent/&gt;
+        &lt;/div&gt;
+    )
+}
+</code></pre>
+<p>Function components only accept <a href="components/../essentials/attribute.html#traits">traits</a> and return JSX for rendering. <br>They can be used as <a href="components/../essentials/application.html#the-root-component"><code>root components</code></a></p>
+<h2 id="class-components"><a class="header" href="#class-components">Class Components</a></h2>
+<hr />
+<p align="center"><img src="components/../assets/velte-class-component.png"></p>
+<p>These components extends <code>VelteComponent: class</code>, so they inherit all the functions of the base <code>velte component</code> from <code>velte</code>.</p>
+<blockquote>
+<p><strong>NOTE</strong> : class component names must always start with a capital letter, its still a class afterall.</p>
+</blockquote>
+<h2 id="inherited-functionality"><a class="header" href="#inherited-functionality"><code>Inherited</code> Functionality</a></h2>
+<h3 id="lifecycle-hooks-2"><a class="header" href="#lifecycle-hooks-2"><a href="components/../essentials/hooks.html">Lifecycle hooks</a></a></h3>
+<h3 id="constructor"><a class="header" href="#constructor"><code>constructor()</code></a></h3>
+<p>The <code>constructor()</code> is a powerful function in velte components.<br> 
+They can define <a href="components/./basics.html#component-states"><code>states</code></a> and component <a href="components/./basics.html#component-methods"><code>methods</code></a>. They also add <a href="components/"><code>data traits</code></a> functionality to class components.</p>
+<pre><code class="language-javascript">//inside class component
+
+constructor(){
+    //define states
+    this.state = {
+        data : 0
+    }
+    //define methods
+    this.increment = () =&gt;{
+        this.setState({count: this.state.count + 1})
+    }
+}
+</code></pre>
+<h3 id="render--inherited"><a class="header" href="#render--inherited"><code>render() : Inherited</code></a></h3>
+<p>The <code>render()</code> method inherits from <code>VelteComponent: class</code>.<br>
+This method returns JSX to be rendered.</p>
+<pre><code class="language-javascript">//inside class component
+render(){
+    return(
+        &lt;p&gt;Hello velte&lt;/p&gt;
+    )
+}
+
+</code></pre>
+<h2 id="component-states"><a class="header" href="#component-states">Component <code>states</code></a></h2>
+<hr />
+<p>How do we store data in a component? with <code>states</code>!!!<br>
+states help store data for use in a component, this can be for displaying information or using the data to perform calculations or sending requests to servers...</p>
+<pre><code class="language-javascript">//inside class component constructor
+this.state = {
+    data : value
+}
+</code></pre>
+<p>Think of states like a local store for variables, where <code>data</code> is the name of the variable and <code>value</code> is the variable value.</p>
+<pre><code class="language-javascript">//inside class component constructor
+this.state = {
+    name : &quot;Joe&quot;,
+    age : 23
+}
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> : <code>states</code> can also contain objects.</p>
+</blockquote>
+<pre><code class="language-javascript">//inside class component constructor
+this.state = {
+    person : {name : &quot;Joe&quot;, age : 23}
+}
+</code></pre>
+<h3 id="setstate"><a class="header" href="#setstate"><code>setState()</code></a></h3>
+<p>To update a state variable we use <code>setState()</code> method inside class components.</p>
+<pre><code class="language-javascript">export class Counter extends VelteComponent{
+    constructor(traits){
+        super(traits)
+        this.state = {
+            count : 0
+        }
+        this.increment = () =&gt;{
+            this.setState({count: this.state.count + 1})
+        }
+    }
+
+    render(){
+        return(
+            &lt;p&gt;{this.state.count}&lt;/p&gt;
+            &lt;button v-on:click = {this.increment}&gt;Increment&lt;/button&gt;
+        )
+    }
+}
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> : <code>this.state.count</code> accesses the count variable inside the &quot;state store&quot;.</p>
+</blockquote>
+<blockquote>
+<p><strong>NOTE</strong> : <code>this</code> is called before accessing the different methods because we use <code>this</code> to reference the current component instance.</p>
+</blockquote>
+<blockquote>
+<p><strong>NOTE</strong> : For scalability, your components would live in another folder <code>components</code> if using the <a href="components/../start/get-started.html#starter-kit"><code>starter-kit</code></a>. You would have to export the component by adding the <code>export</code> keyword.</p>
+</blockquote>
+<h2 id="component-hooks"><a class="header" href="#component-hooks">Component <code>hooks</code></a></h2>
+<hr />
+<p>What if I want to perform various functions during the lifecycle of my components.<br></p>
+<p>You can, <code>velte</code> supports different <code>hooks</code> that run during the lifecycle of your components</p>
+<h3 id="lifecycle-hooks-3"><a class="header" href="#lifecycle-hooks-3"><a href="components/../essentials/hooks.html">Lifecycle hooks</a></a></h3>
+<h2 id="component-methods"><a class="header" href="#component-methods">Component <code>methods</code></a></h2>
+<hr />
+<p>Methods are functions in classes, used to perform a certain grouped task without repeating code.<br>
+In <code>velte class components</code> methods do the exact same thing. Methods in <code>velte</code> live in the <code>constructor()</code> function</p>
+<pre><code class="language-javascript">//inside class component
+constructor(...){
+    ...
+    //methods go here
+}
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> : Basic velte component methods (functions) can live inside the <code>render()</code> method</p>
+</blockquote>
+<pre><code class="language-javascript">//inside class component
+render(){
+    //methods go here
+    return()
+}
+</code></pre>
+<p>Using methods inside a class component :</p>
+<pre><code class="language-javascript">export class Greet extends VelteComponent{
+    constructor(traits){
+        super(traits)
+        this.state = {
+            show : true
+        }
+        //this is a method
+        this.display() =&gt;{
+            return &lt;p&gt;Hello&lt;/p&gt;
+        }
+    }
+
+    render(){
+        //this is a basic function
+        const greet = ()=&gt;{
+            return &lt;h1&gt;Greetings&lt;/h1&gt;
+        }
+        return(
+            &lt;If condition={this.state.show}&gt;
+                {()=&gt;this.display()}
+            &lt;/If&gt;
+            {this.greet}
+        )
+    }
+}
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> : If we don't add <code>()</code> when calling methods or functions, no need to use a callback function to call your required method or function.</p>
+</blockquote>
+<h3 id="method-parameters-and-arguments"><a class="header" href="#method-parameters-and-arguments">Method Parameters and Arguments</a></h3>
+<p>When declaring a method, you can pass in parameters just like a <code>Javascript</code> function.<br></p>
+<p>When calling the method, you can pass arguments for the required parameters just like calling a <code>Javascript</code> function.</p>
+<pre><code class="language-javascript">export class Binding extends VelteComponent{
+    constructor(traits){
+        super(traits)
+        this.state = {
+            message : &quot;Hey dude!&quot;
+        }
+
+        this.handleChange = (event) =&gt; {
+            event.preventDefault()
+            variableValue = event.target.value
+        }
+    }
+
+    render(){
+
+        return(
+            &lt;div&gt;
+                &lt;p&gt;{this.state.message}&lt;/p&gt;
+                &lt;input name=&quot;message&quot; value = {this.state.message} v-on:change={()=&gt;this.handleChange()}/&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+</code></pre>
+<h2 id="component-template"><a class="header" href="#component-template">Component <code>template</code></a></h2>
+<hr />
+<p>Velte uses <a href="components/../essentials/syntax.html#jsx">JSX</a> for templating, meaning you structure how your UI looks with JSX.<br></p>
+<p>In class components, you return JSX inside the <code>render()</code> method. This would render the snippet of JSX in your component when <a href="components/./basics.html#calling-components">called</a>.</p>
+<pre><code class="language-javascript">//inside a class component
+render(){
+    return(
+        &lt;p&gt;Hello, from the render method&lt;/p&gt;
+    )
+}
+</code></pre>
+<h2 id="component-nesting"><a class="header" href="#component-nesting">Component Nesting</a></h2>
+<hr />
+<p>Components can be nested into other components by calling them. The nested components are called <code>child components</code> and host component that houses the nested components are called <code>parent components</code></p>
+<pre><code class="language-javascript">
+//inside child class component
+render(){
+    return(
+        &lt;div&gt;
+            &lt;p&gt;Child Component&lt;/p&gt;
+        &lt;/div&gt;
+    )
+}
+</code></pre>
+<pre><code class="language-javascript">
+//inside parent class component
+render(){
+    return(
+        &lt;div&gt;
+            &lt;p&gt;Parent component&lt;/p&gt;
+            &lt;ChildComponent/&gt;
+        &lt;/div&gt;
+    )
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><p align="center"><img src="components/../assets/velte-main.png"></p>
+<h1 id="component-traits"><a class="header" href="#component-traits">Component Traits</a></h1>
+<p>Component traits are simply <a href="components/../essentials/attribute.html#data-trait"><code>data traits</code></a> for passing data into a component, nothing special. They are not <a href="components/../essentials/attribute.html#attribute-trait"><code>attributes</code></a> or <a href="components/../essentials/syntax.html#directives"><code>directives</code></a>, just plain definitions.</p>
+<h2 id="component-traits--function-components"><a class="header" href="#component-traits--function-components">Component Traits : <code>Function Components</code></a></h2>
+<hr />
+<pre><code class="language-javascript">//app.js
+const App = &lt;CustomComponent myTrait=&quot;Hello World&quot;/&gt;
+
+//component.js
+
+function CustomComponent ({myTrait}){
+    return (&lt;p&gt;{myTrait}&lt;/p&gt;)
+}
+</code></pre>
+<p><code>myTrait</code> is a data trait for our component.<br>
+Traits in function components are passed in as <code>parameters</code> during component decleration and <code>arguments</code> when calling the component.</p>
+<h2 id="component-traits--class-components"><a class="header" href="#component-traits--class-components">Component Traits : <code>Class Components</code></a></h2>
+<hr />
+<pre><code class="language-javascript">//app.js
+const App = &lt;AnotherComponent myTrait=&quot;Hello World&quot;/&gt;
+
+//component.js
+export class AnotherComponent extends VelteComponent{
+    constructor(traits){
+        super(traits)
+        ...
+    }
+
+    ...
+}
+</code></pre>
+<p>Passing in <code>traits</code> as a paramenter and calling <code>super(traits)</code> enables the data trait funtionality for class components. To use the traits passed into the component, we can access them the same way we can access <a href="components/../components/basics.html#component-states"><code>this.state.data</code></a></p>
+<pre><code class="language-javascript">//app.js
+const App = &lt;AnotherComponent myTrait=&quot;Hello World&quot;/&gt;
+
+//component.js
+export class AnotherComponent extends VelteComponent{
+    constructor(traits){
+        super(traits)
+        ...
+    }
+
+    render(){
+        return &lt;p&gt;{this.traits.myTrait}&lt;/p&gt;
+    }
+}
+</code></pre>
+<p>Calling <code>this.traits.myTrait</code> access the value of <code>myTrait</code> when passed in as a data trait. </p>
+<div style="break-before: page; page-break-before: always;"></div><p align="center"><img src="components/../assets/velte-main.png"></p>
+<h1 id="component-events"><a class="header" href="#component-events">Component Events</a></h1>
+<blockquote>
+<p><strong>NOTE</strong> : Using events Listeners in components are the same as using them in elements. check out how to use <a href="components/../essentials/events.html"><code>event handlers</code></a></p>
+</blockquote>
+<pre><code class="language-javascript">const log = ()=&gt; console.log(&quot;You cliked Me&quot;)
+
+const App = &lt;AnotherComponent v-on:click = {()=&gt;log()} myTrait=&quot;Hello World&quot;/&gt;
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><p align="center"><img src="components/../assets/velte-main.png"></p>
+<h1 id="async-components"><a class="header" href="#async-components">Async components</a></h1>
+<blockquote>
+<p><strong>NOTE</strong> : To use <code>async/await</code> functionality in velte, simple mark the function or method with the <code>async</code> keyword and perform your async tasks.</p>
+</blockquote>
+<pre><code class="language-javascript">async function FetchPokemon ({character}){
+    const url = `https://pokeapi.co/api/v2/pokemon/${character}`
+    const req = fetch(url)
+    const res = await req.json()
+    return (&lt;p&gt;{res}&lt;/p&gt;)
+}
+
+const App = &lt;FetchPokemon character = &quot;ditto&quot;/&gt;
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><p align="center"><img src="misc/../assets/velte-main.png"></p>
+<h1 id="client-side-rendering"><a class="header" href="#client-side-rendering">Client-Side Rendering</a></h1>
+<p>Client-side rendering is a reasonably new approach to rendering websites, and it didn't really become popular until JavaScript libraries started incorporating it.</p>
+<p>When we talk about client-side rendering, it’s about rendering content in the browser using JavaScript. So instead of getting all the content from the HTML document itself, a bare-bones HTML document with a JavaScript file in initial loading itself is received, which renders the rest of the site using the browser. Client-side rendering enables rich site interaction, fast website rendering after initial load, great for web applications and robust selection of Javascript libraries.</p>
+<blockquote>
+<p><strong>NOTE</strong> : Velte apps built with the <code>velte-starter-kit</code> are <code>Client Side Rendered</code></p>
+</blockquote>
+<h1 id="static-site-generation"><a class="header" href="#static-site-generation">Static Site Generation</a></h1>
+<p>Static Site Generation (SSG), also referred to as pre-rendering, is a popular technique for building fast websites. If the data needed to server-render a page is the same for every user, then instead of rendering the page every time a request comes in, we can render it only once, ahead of time, during the build process. Pre-rendered pages are generated and served as static HTML files.</p>
+<p>SSG retains the same performance characteristics of SSR apps: it provides great time-to-content performance. At the same time, it is cheaper and easier to deploy than SSR apps because the output is static HTML and assets.</p>
+<p>SSG is also great for content-based websites such as documentation sites or blogs. In fact, this website you are reading right now is statically generated.</p>
+<blockquote>
+<p><strong>NOTE</strong> : The <code>velte-starter-kit</code> does not build SSG websites by default.</p>
+</blockquote>
+<h2 id="server-side-rendering"><a class="header" href="#server-side-rendering">Server-Side Rendering</a></h2>
+<hr />
+<p>Server-side rendering (SSR) is the process of rendering web pages on a server and passing them to the browser (client-side), instead of rendering them in the browser. SSR sends a fully rendered page to the client; the client’s JavaScript bundle takes over and enables the SPA framework to operate.</p>
+<p>This means that if your application is server-side rendered, the content is fetched from the server and passed to the browser to be displayed to the user. Client-side rendering is different: The user would have to navigate to the page before the browser fetches data from the server, meaning that the user would have to wait for some seconds to pass before the browser is served with the content for that page. Applications that have SSR enabled are called server-side-rendered applications.</p>
+<blockquote>
+<p><strong>NOTE</strong> : Velte does not currently support building SSR applications.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><p align="center"><img src="misc/../assets/velte-main.png"></p>
+<h1 id="state-managment"><a class="header" href="#state-managment">State Managment</a></h1>
+<p>Every velte component instance already &quot;manages&quot; its own reactive state. Take a simple counter component as an example:</p>
+<pre><code class="language-javascript">export class Counter extends VelteComponent{
+    constructor(traits){
+        super(traits)
+        this.state = {
+            count : 0
+        }
+        this.increment = () =&gt;{
+            this.setState({count: this.state.count + 1})
+        }
+    }
+
+    render(){
+        return(
+            &lt;p&gt;{this.state.count}&lt;/p&gt;
+            &lt;button v-on:click = {this.increment}&gt;Increment&lt;/button&gt;
+        )
+    }
+}
+</code></pre>
+<p>It is a self-contained unit with the following parts:</p>
+<ul>
+<li>The state, the source of truth that drives our app;</li>
+<li>The view, a declarative mapping of the state;</li>
+<li>The actions, the possible ways the state could change in reaction to user inputs from the view.</li>
+</ul>
+<p>However, the simplicity starts to break down when we have multiple components that share a common state:</p>
+<p>A possible workaround is by &quot;lifting&quot; the shared state up to a common ancestor component, and then pass it down as traits. However, this quickly gets tedious in component trees with deep hierarchies, leading to another problem known as Trait Punching.</p>
+<p>A simpler and more straightforward solution is to extract the shared state out of the components, and manage it in a global singleton.</p>
+<blockquote>
+<p><strong>NOTE</strong> : Velte doesn't support global states, this was intentional as velte was built to be extensive, There are many great state managment libraries out there - The <code>velte-starter-kit</code> come with one by default, <a href="https://valtio.pmnd.rs"><code>valtio</code></a></p>
+</blockquote>
+<h2 id="trait-punching"><a class="header" href="#trait-punching">Trait Punching</a></h2>
+<hr />
+<p>Usually, when we need to pass data from the parent to a child component, we use traits. However, imagine the case where we have a large component tree, and a deeply nested component needs something from a distant ancestor component. With only traits, we would have to pass the same prop across the entire parent chain:</p>
+<p align="center"><img src="misc/../assets/component-tree2.png"></p>
+<p>What if <code>&lt;card&gt;</code> was to give data to <code>&lt;article&gt;</code>, you would have to store the data in a variable inside <code>&lt;root&gt;</code>, so it can be passed as a trait to <code>&lt;article&gt;</code></p>
+<p>Global stores can fix this problem.</p>
+<p align="center"><img src="misc/../assets/global.png"></p>
+<p><code>global store</code> holds the data passed from <code>&lt;card&gt;</code> to <code>&lt;article&gt;</code></p>
+<p>The <code>global store</code> holds data for your application instance and can be passed into components without punching the traits.</p>
+<div style="break-before: page; page-break-before: always;"></div><p align="center"><img src="misc/../assets/velte-main.png"></p>
+<h1 id="routing"><a class="header" href="#routing">Routing</a></h1>
+<p>This is used in making single page applications, literally with only one HTML page. When the user makes a request for a new page like <code>/about</code> , The router would remove the &quot;current page&quot; and display the about page information on the same HTML page.</p>
+<blockquote>
+<p><strong>NOTE</strong> : When client side rendering is fully supported, This feature will also be added. </p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><p align="center"><img src="misc/../assets/velte-main.png"></p>
+<h1 id="tooling"><a class="header" href="#tooling">Tooling</a></h1>
+<p>Various ways you can use velte for your next project.</p>
+<h2 id="online-playground"><a class="header" href="#online-playground">Online Playground</a></h2>
+<hr />
+<p>You can try velte online without any installations, try now :</p>
+<ul>
+<li><a href="misc/">Velte on codepen</a></li>
+<li><a href="misc/">Velte on codesandbox</a></li>
+</ul>
+<h2 id="velte-cdn-1"><a class="header" href="#velte-cdn-1">Velte CDN</a></h2>
+<hr />
+<p>No need to use the starter kit if you don't want to, velte is progressive. If you have an existing website you want to add functionality to or you want to build a small project, you can with the <a href="misc/">velte CDN</a>.
+Just include the script tag:</p>
+<pre><code class="language-html">&lt;script src=&quot;http://velteCDN.es.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<h2 id="velte-starter-kit"><a class="header" href="#velte-starter-kit">Velte starter kit</a></h2>
+<hr />
+<p>The <a href="misc/"><code>velte-starter-kit</code></a> is perfect for medium sized projects, It scales well and the project structure is easy to understand, Every logic and assets goes in the <code>App</code> folder.</p>
+<h2 id="velte-cli-1"><a class="header" href="#velte-cli-1">Velte CLI</a></h2>
+<hr />
+<blockquote>
+<p><strong>NOTE :</strong> This is an upcoming feature, that enables you to generate a custom velte project with options for choosing templating syntax, build tool for project and more. </p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><p align="center"><img src="best-practice/../assets/velte-main.png"></p>
+<h1 id="scaling-up"><a class="header" href="#scaling-up">Scaling Up</a></h1>
+<p>To ensure your application scales well as it grows bigger, follow these tips:</p>
+<h2 id="project-structure"><a class="header" href="#project-structure">Project Structure</a></h2>
+<hr />
+<p>The velte-starter-kit project structure was built for scaling. Meaning as your project gets bigger and bigger, project managment wouldn't be a pain in the butt.
+Your entire application lives in the <code>App</code> folder and the entry point for your application is usually <code>app/App.js</code> this can be changed. </p>
+<ul>
+<li>All components should live in the <code>app/components</code> folder.</li>
+<li>All styles should live in the <code>app/style</code> folder.</li>
+<li>All assets should live in the <code>app/assets</code> folder.</li>
+</ul>
+<h2 id="single-file-components"><a class="header" href="#single-file-components">Single-File Components</a></h2>
+<hr />
+<p>It is recommended to keep all your project components in a single <code>.js</code> file in the <code>app/components</code> folder then export the function or class component with the <code>export</code> keyword. Import the component into your <code>.js</code> entry point or another component file.</p>
+<p>Below is an example of a class component that has been exported for use else where.</p>
+<p align="center"><img src="best-practice/../assets/velte-class-component.png"></p>
+<div style="break-before: page; page-break-before: always;"></div><p align="center"><img src="best-practice/../assets/velte-main.png"></p>
+<h1 id="production-deployment"><a class="header" href="#production-deployment">Production Deployment</a></h1>
+<h2 id="with-build-tools-1"><a class="header" href="#with-build-tools-1">With Build Tools</a></h2>
+<hr />
+<p>The official velte build setup is based on <a href="https://webpack.js.org/">webpack</a>, a frontend build tool that is used to bundle assets and scripts into static assets.
+To build your project for production, run:</p>
+<pre><code class="language-bash">npm run velte:build
+</code></pre>
+<p>The build output would be located in a newly created <code>dist</code> folder, stands for <code>distribution</code>. That is your finished project ready for hosting, If you make changes to your project, you can always run <code>npm run velte:build</code> again to update the build.</p>
+<h2 id="without-build-tools"><a class="header" href="#without-build-tools">Without Build Tools</a></h2>
+<hr />
+<blockquote>
+<p><strong>NOTE :</strong> This requires you to use the CDN for production, you can ship your project folder directly, the velte CDN build includes the runtime.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><p align="center"><img src="best-practice/../assets/velte-main.png"></p>
+<h1 id="security"><a class="header" href="#security">Security</a></h1>
+<h2 id="report-vulnerabilities"><a class="header" href="#report-vulnerabilities">Report Vulnerabilities</a></h2>
+<hr />
+<p>When a vulnerability is reported, it becomes our immediate concern. 
+We always ensure the issue gets fixed in a patch update if critical or the next update.</p>
+<blockquote>
+<p><strong>NOTE</strong> : vulnerabilities wold also be fixed for supported LTS versions.</p>
+</blockquote>
+<p>We recommend using the latest version of velte and it's official documentation to ensure your application remains secure as possible.</p>
+<h2 id="how-velte-protects-you"><a class="header" href="#how-velte-protects-you">How Velte Protects You</a></h2>
+<hr />
+<p>Since velte uses JSX for templating, all your content live inside JSX. This helps prevent risks of XSS exploits, JSX forces automatic escaping in expressions <code>{...}</code>.</p>
+<blockquote>
+<p><strong>NOTE</strong> : we recommend using the <code>sanitize URL</code> npm package in your applications to protect against dangerous URI schemes.</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Velte components - Velte Docs</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.png">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">INDEX</a></li><li class="chapter-item expanded affix "><a href="../versions.html">VERSIONS</a></li><li class="chapter-item expanded affix "><a href="../api/reference.html">API REFERENCE</a></li><li class="chapter-item expanded affix "><li class="part-title">GETTING STARTED</li><li class="chapter-item expanded "><a href="../start/introduction.html"><strong aria-hidden="true">1.</strong> What is velte?</a></li><li class="chapter-item expanded "><a href="../start/get-started.html"><strong aria-hidden="true">2.</strong> Quick Start</a></li><li class="chapter-item expanded affix "><li class="part-title">ESSENTIALS</li><li class="chapter-item expanded "><a href="../essentials/application.html"><strong aria-hidden="true">3.</strong> Creating an application</a></li><li class="chapter-item expanded "><a href="../essentials/syntax.html"><strong aria-hidden="true">4.</strong> Velte's syntax</a></li><li class="chapter-item expanded "><a href="../essentials/reactivity.html"><strong aria-hidden="true">5.</strong> Reactivity</a></li><li class="chapter-item expanded "><a href="../essentials/attribute.html"><strong aria-hidden="true">6.</strong> Traits</a></li><li class="chapter-item expanded "><a href="../essentials/conditions.html"><strong aria-hidden="true">7.</strong> Conditional Rendering</a></li><li class="chapter-item expanded "><a href="../essentials/list.html"><strong aria-hidden="true">8.</strong> List Rendering</a></li><li class="chapter-item expanded "><a href="../essentials/events.html"><strong aria-hidden="true">9.</strong> Event handling</a></li><li class="chapter-item expanded "><a href="../essentials/input.html"><strong aria-hidden="true">10.</strong> Form input Binding</a></li><li class="chapter-item expanded "><a href="../essentials/hooks.html"><strong aria-hidden="true">11.</strong> Lifecycle Hooks</a></li><li class="chapter-item expanded affix "><li class="part-title">COMPONENTS</li><li class="chapter-item expanded "><a href="../components/basics.html" class="active"><strong aria-hidden="true">12.</strong> Velte components</a></li><li class="chapter-item expanded "><a href="../components/traits.html"><strong aria-hidden="true">13.</strong> Component Traits</a></li><li class="chapter-item expanded "><a href="../components/events.html"><strong aria-hidden="true">14.</strong> Events</a></li><li class="chapter-item expanded "><a href="../components/async.html"><strong aria-hidden="true">15.</strong> Async components</a></li><li class="chapter-item expanded affix "><li class="part-title">MISC</li><li class="chapter-item expanded "><a href="../misc/site.html"><strong aria-hidden="true">16.</strong> Site Rendering</a></li><li class="chapter-item expanded "><a href="../misc/states.html"><strong aria-hidden="true">17.</strong> State Managment</a></li><li class="chapter-item expanded "><a href="../misc/route.html"><strong aria-hidden="true">18.</strong> Routing</a></li><li class="chapter-item expanded "><a href="../misc/tools.html"><strong aria-hidden="true">19.</strong> Tooling</a></li><li class="chapter-item expanded affix "><li class="part-title">BEST PRACTICE</li><li class="chapter-item expanded "><a href="../best-practice/scale.html"><strong aria-hidden="true">20.</strong> Scaling Up</a></li><li class="chapter-item expanded "><a href="../best-practice/deployment.html"><strong aria-hidden="true">21.</strong> Production Deployment</a></li><li class="chapter-item expanded "><a href="../best-practice/security.html"><strong aria-hidden="true">22.</strong> Security</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Velte Docs</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p align="center"><img src="../assets/velte-main.png"></p>
+<h1 id="velte-components"><a class="header" href="#velte-components">Velte components</a></h1>
+<blockquote>
+<p><strong>NOTE</strong> : You should always import <code>VelteElement</code> and <code>VelteComponent</code> from <code>velte</code> when using velte components</p>
+</blockquote>
+<p>Comonents allows us to split the UI into independent and reusable pieces. It's common for an app to be organised into a tree of nested components.<br>
+Velte supports <a href="./basics.html#functional-components"><code>function components</code></a> and <a href="./basics.html#class-components"><code>class components</code></a></p>
+<p align="center"><img src="../assets/component-tree2.png"></p>
+<blockquote>
+<p><strong>NOTE</strong> : In velte, very component is made up of custom content and functionality.</p>
+</blockquote>
+<p align="center"><img src="../assets/component.png" width=200></p>
+<p>From the diagram above, every velte component is made up of <code>states</code>, <code>hooks</code>, <code>methods</code>, and <code>templates</code></p>
+<h2 id="calling-components"><a class="header" href="#calling-components">Calling Components</a></h2>
+<hr />
+<p>Calling components is just like calling a HTML element like <code>&lt;img&gt;</code></p>
+<pre><code class="language-javascript">const App = &lt;MyComponent/&gt;
+</code></pre>
+<p><code>MyComponent</code> is the name of the component.</p>
+<h2 id="functional-components"><a class="header" href="#functional-components">Functional Components</a></h2>
+<hr />
+<p align="center"><img src="../assets/velte-function-component.png"></p>
+<p>These components are created with <code>functions</code>. </p>
+<pre><code class="language-javascript">function functionComponent({name}){
+    return (
+        &lt;div&gt;
+            &lt;h1&gt;I can render stuff too...&lt;/h1&gt;
+            &lt;p&gt;Hello there, {name}&lt;/p&gt;
+            &lt;AnotherComponent/&gt;
+        &lt;/div&gt;
+    )
+}
+</code></pre>
+<pre><code class="language-javascript">const anotherFunctionComponent = ({age})=&gt;{
+    return (
+        &lt;div&gt;
+            &lt;h1&gt;I can also render stuff too...&lt;/h1&gt;
+            &lt;p&gt;Your age is {age}&lt;/p&gt;
+            &lt;functionComponent/&gt;
+        &lt;/div&gt;
+    )
+}
+</code></pre>
+<p>Function components only accept <a href="../essentials/attribute.html#traits">traits</a> and return JSX for rendering. <br>They can be used as <a href="../essentials/application.html#the-root-component"><code>root components</code></a></p>
+<h2 id="class-components"><a class="header" href="#class-components">Class Components</a></h2>
+<hr />
+<p align="center"><img src="../assets/velte-class-component.png"></p>
+<p>These components extends <code>VelteComponent: class</code>, so they inherit all the functions of the base <code>velte component</code> from <code>velte</code>.</p>
+<blockquote>
+<p><strong>NOTE</strong> : class component names must always start with a capital letter, its still a class afterall.</p>
+</blockquote>
+<h2 id="inherited-functionality"><a class="header" href="#inherited-functionality"><code>Inherited</code> Functionality</a></h2>
+<h3 id="lifecycle-hooks"><a class="header" href="#lifecycle-hooks"><a href="../essentials/hooks.html">Lifecycle hooks</a></a></h3>
+<h3 id="constructor"><a class="header" href="#constructor"><code>constructor()</code></a></h3>
+<p>The <code>constructor()</code> is a powerful function in velte components.<br> 
+They can define <a href="./basics.html#component-states"><code>states</code></a> and component <a href="./basics.html#component-methods"><code>methods</code></a>. They also add <a href=""><code>data traits</code></a> functionality to class components.</p>
+<pre><code class="language-javascript">//inside class component
+
+constructor(){
+    //define states
+    this.state = {
+        data : 0
+    }
+    //define methods
+    this.increment = () =&gt;{
+        this.setState({count: this.state.count + 1})
+    }
+}
+</code></pre>
+<h3 id="render--inherited"><a class="header" href="#render--inherited"><code>render() : Inherited</code></a></h3>
+<p>The <code>render()</code> method inherits from <code>VelteComponent: class</code>.<br>
+This method returns JSX to be rendered.</p>
+<pre><code class="language-javascript">//inside class component
+render(){
+    return(
+        &lt;p&gt;Hello velte&lt;/p&gt;
+    )
+}
+
+</code></pre>
+<h2 id="component-states"><a class="header" href="#component-states">Component <code>states</code></a></h2>
+<hr />
+<p>How do we store data in a component? with <code>states</code>!!!<br>
+states help store data for use in a component, this can be for displaying information or using the data to perform calculations or sending requests to servers...</p>
+<pre><code class="language-javascript">//inside class component constructor
+this.state = {
+    data : value
+}
+</code></pre>
+<p>Think of states like a local store for variables, where <code>data</code> is the name of the variable and <code>value</code> is the variable value.</p>
+<pre><code class="language-javascript">//inside class component constructor
+this.state = {
+    name : &quot;Joe&quot;,
+    age : 23
+}
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> : <code>states</code> can also contain objects.</p>
+</blockquote>
+<pre><code class="language-javascript">//inside class component constructor
+this.state = {
+    person : {name : &quot;Joe&quot;, age : 23}
+}
+</code></pre>
+<h3 id="setstate"><a class="header" href="#setstate"><code>setState()</code></a></h3>
+<p>To update a state variable we use <code>setState()</code> method inside class components.</p>
+<pre><code class="language-javascript">export class Counter extends VelteComponent{
+    constructor(traits){
+        super(traits)
+        this.state = {
+            count : 0
+        }
+        this.increment = () =&gt;{
+            this.setState({count: this.state.count + 1})
+        }
+    }
+
+    render(){
+        return(
+            &lt;p&gt;{this.state.count}&lt;/p&gt;
+            &lt;button v-on:click = {this.increment}&gt;Increment&lt;/button&gt;
+        )
+    }
+}
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> : <code>this.state.count</code> accesses the count variable inside the &quot;state store&quot;.</p>
+</blockquote>
+<blockquote>
+<p><strong>NOTE</strong> : <code>this</code> is called before accessing the different methods because we use <code>this</code> to reference the current component instance.</p>
+</blockquote>
+<blockquote>
+<p><strong>NOTE</strong> : For scalability, your components would live in another folder <code>components</code> if using the <a href="../start/get-started.html#starter-kit"><code>starter-kit</code></a>. You would have to export the component by adding the <code>export</code> keyword.</p>
+</blockquote>
+<h2 id="component-hooks"><a class="header" href="#component-hooks">Component <code>hooks</code></a></h2>
+<hr />
+<p>What if I want to perform various functions during the lifecycle of my components.<br></p>
+<p>You can, <code>velte</code> supports different <code>hooks</code> that run during the lifecycle of your components</p>
+<h3 id="lifecycle-hooks-1"><a class="header" href="#lifecycle-hooks-1"><a href="../essentials/hooks.html">Lifecycle hooks</a></a></h3>
+<h2 id="component-methods"><a class="header" href="#component-methods">Component <code>methods</code></a></h2>
+<hr />
+<p>Methods are functions in classes, used to perform a certain grouped task without repeating code.<br>
+In <code>velte class components</code> methods do the exact same thing. Methods in <code>velte</code> live in the <code>constructor()</code> function</p>
+<pre><code class="language-javascript">//inside class component
+constructor(...){
+    ...
+    //methods go here
+}
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> : Basic velte component methods (functions) can live inside the <code>render()</code> method</p>
+</blockquote>
+<pre><code class="language-javascript">//inside class component
+render(){
+    //methods go here
+    return()
+}
+</code></pre>
+<p>Using methods inside a class component :</p>
+<pre><code class="language-javascript">export class Greet extends VelteComponent{
+    constructor(traits){
+        super(traits)
+        this.state = {
+            show : true
+        }
+        //this is a method
+        this.display() =&gt;{
+            return &lt;p&gt;Hello&lt;/p&gt;
+        }
+    }
+
+    render(){
+        //this is a basic function
+        const greet = ()=&gt;{
+            return &lt;h1&gt;Greetings&lt;/h1&gt;
+        }
+        return(
+            &lt;If condition={this.state.show}&gt;
+                {()=&gt;this.display()}
+            &lt;/If&gt;
+            {this.greet}
+        )
+    }
+}
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> : If we don't add <code>()</code> when calling methods or functions, no need to use a callback function to call your required method or function.</p>
+</blockquote>
+<h3 id="method-parameters-and-arguments"><a class="header" href="#method-parameters-and-arguments">Method Parameters and Arguments</a></h3>
+<p>When declaring a method, you can pass in parameters just like a <code>Javascript</code> function.<br></p>
+<p>When calling the method, you can pass arguments for the required parameters just like calling a <code>Javascript</code> function.</p>
+<pre><code class="language-javascript">export class Binding extends VelteComponent{
+    constructor(traits){
+        super(traits)
+        this.state = {
+            message : &quot;Hey dude!&quot;
+        }
+
+        this.handleChange = (event) =&gt; {
+            event.preventDefault()
+            variableValue = event.target.value
+        }
+    }
+
+    render(){
+
+        return(
+            &lt;div&gt;
+                &lt;p&gt;{this.state.message}&lt;/p&gt;
+                &lt;input name=&quot;message&quot; value = {this.state.message} v-on:change={()=&gt;this.handleChange()}/&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+</code></pre>
+<h2 id="component-template"><a class="header" href="#component-template">Component <code>template</code></a></h2>
+<hr />
+<p>Velte uses <a href="../essentials/syntax.html#jsx">JSX</a> for templating, meaning you structure how your UI looks with JSX.<br></p>
+<p>In class components, you return JSX inside the <code>render()</code> method. This would render the snippet of JSX in your component when <a href="./basics.html#calling-components">called</a>.</p>
+<pre><code class="language-javascript">//inside a class component
+render(){
+    return(
+        &lt;p&gt;Hello, from the render method&lt;/p&gt;
+    )
+}
+</code></pre>
+<h2 id="component-nesting"><a class="header" href="#component-nesting">Component Nesting</a></h2>
+<hr />
+<p>Components can be nested into other components by calling them. The nested components are called <code>child components</code> and host component that houses the nested components are called <code>parent components</code></p>
+<pre><code class="language-javascript">
+//inside child class component
+render(){
+    return(
+        &lt;div&gt;
+            &lt;p&gt;Child Component&lt;/p&gt;
+        &lt;/div&gt;
+    )
+}
+</code></pre>
+<pre><code class="language-javascript">
+//inside parent class component
+render(){
+    return(
+        &lt;div&gt;
+            &lt;p&gt;Parent component&lt;/p&gt;
+            &lt;ChildComponent/&gt;
+        &lt;/div&gt;
+    )
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../essentials/hooks.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../components/traits.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../essentials/hooks.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../components/traits.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
